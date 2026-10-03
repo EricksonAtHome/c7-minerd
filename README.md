@@ -47,7 +47,7 @@ Blocks mined with `c7-minerd` immediately secure the network, mint coinbase bloc
 Clone the repository and copy the example environment configuration:
 
 ```bash
-git clone https://github.com/RoboticsStudio/c7-minerd.git
+git clone https://github.com/EricksonAtHome/c7-minerd.git
 cd c7-minerd
 cp config.example.env .env
 ```
