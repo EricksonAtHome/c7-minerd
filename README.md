@@ -5,7 +5,7 @@
 [![Explorer](https://img.shields.io/badge/Live%20Explorer-blocks.prysel.com-green.svg)](https://blocks.prysel.com/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
-High-performance, XMRig-styled terminal miner, block validator, and on-chain anchor controller for the **CentralDataBase C7 (CDCI)** blockchain and [Prysel Block Explorer](https://blocks.prysel.com/).
+High-performance, terminal miner, block validator, and on-chain anchor controller for the **CentralDataBase C7 (CDCI)** blockchain and [Prysel Block Explorer](https://blocks.prysel.com/).
 
 ---
 
