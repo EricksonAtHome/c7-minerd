@@ -146,13 +146,5 @@ docker compose -f docker/docker-compose.yml exec c7-minerd check-blocks
 
 ---
 
-## 🛡️ Security Best Practices
-
-1. **Never commit `.env` or SSH keys**: `.gitignore` is pre-configured to block `.env`, `*.pem`, `*.key`, and credentials.
-2. **Isolate RPC access**: Never bind port `13431` to public `0.0.0.0` without strict firewalling or SSH tunneling.
-3. **Coinbase Maturity**: Mined block rewards require standard confirmation depth before becoming spendable for network transactions.
-
----
-
 ## 📄 License
 MIT License. Built for the **CentralDataBase (C7) / Prysel** Ecosystem.
