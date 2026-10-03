@@ -55,7 +55,7 @@ cp config.example.env .env
 Edit `.env` with your preferred payout address and RPC credentials:
 
 ```ini
-RPC_URL=http://127.0.0.1:13431/
+RPC_URL=http://Internet-Protocol-address
 RPC_USER=c7miner
 RPC_PASSWORD=your_secure_password
 MINER_ADDRESS=CSJJZQNp1CgW41s1biCrC9bCqSkrvzLHYz
@@ -89,7 +89,7 @@ chmod +x run.sh c7-minerd.sh
 
 | Parameter | Default | Description |
 |---|---|---|
-| `RPC_URL` | `http://127.0.0.1:13431/` | CentralDataBase CDCI node JSON-RPC endpoint. |
+| `RPC_URL` | `http://Internet-Protocol-address` | CentralDataBase CDCI node JSON-RPC endpoint. |
 | `RPC_USER` | `c7miner` | JSON-RPC basic authentication username. |
 | `RPC_PASSWORD` | `change-me` | JSON-RPC basic authentication password. |
 | `RPC_COOKIE` | *(optional)* | Path to `.cookie` file (overrides user/pass if present). |
