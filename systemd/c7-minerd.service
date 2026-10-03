@@ -1,0 +1,27 @@
+[Unit]
+Description=Prysel C7 Miner
+Documentation=https://github.com/RoboticsStudio/Centraldb_CDCI
+After=network-online.target centraldatabased.service
+Wants=network-online.target
+Requires=centraldatabased.service
+
+[Service]
+Type=simple
+User=centraldatabase
+Group=centraldatabase
+WorkingDirectory=/opt/c7-minerd
+EnvironmentFile=/opt/c7-minerd/.env
+ExecStart=/opt/c7-minerd/c7-minerd.sh
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/c7-minerd
+ReadOnlyPaths=/opt/c7-minerd
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

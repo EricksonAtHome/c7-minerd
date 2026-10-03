@@ -1,0 +1,46 @@
+# Private keys and secrets
+*.pem
+*.key
+*.pfx
+*.pkcs12
+.env
+.env.*
+!.env.example
+!config.example.env
+
+# AWS & Server credentials
+ssh.blocks.prysel.md
+
+# Compiled Python files & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Binaries and local tools
+xmrig
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Docker local data directories
+docker-c7-data/
+docker-c7-core/
+
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs and runtime files
+*.log
+*.pid

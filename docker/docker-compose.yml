@@ -1,0 +1,55 @@
+services:
+  c7-node:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: c7-node
+    restart: unless-stopped
+    command:
+      - centraldatabased
+      - -server=1
+      - -txindex=1
+      - -rpcbind=0.0.0.0
+      - -rpcallowip=0.0.0.0/0
+      - -rpcuser=${RPC_USER:-c7miner}
+      - -rpcpassword=${RPC_PASSWORD:-change-me}
+      - -printtoconsole
+    ports:
+      - "13431:13431"
+      - "13432:13432"
+    volumes:
+      - c7-node-data:/home/centraldatabase/.centraldatabasecore
+    networks:
+      - c7-net
+
+  c7-minerd:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: c7-minerd
+    restart: unless-stopped
+    depends_on:
+      - c7-node
+    env_file:
+      - ../.env
+    environment:
+      - RPC_URL=http://c7-node:13431/
+      - RPC_USER=${RPC_USER:-c7miner}
+      - RPC_PASSWORD=${RPC_PASSWORD:-change-me}
+      - MINER_ADDRESS=${MINER_ADDRESS:-CGZCSzBowAqgHcXPtMT3vs7ycp8hLi5UAD}
+      - EXPLORER_URL=${EXPLORER_URL:-https://blocks.prysel.com/}
+      - MAX_TRIES=${MAX_TRIES:-1000000}
+      - BLOCKS_PER_CALL=${BLOCKS_PER_CALL:-1}
+      - SLEEP_SECONDS=${SLEEP_SECONDS:-1}
+      - MINER_NAME=${MINER_NAME:-c7-minerd}
+    command:
+      - c7-minerd
+    networks:
+      - c7-net
+
+volumes:
+  c7-node-data:
+
+networks:
+  c7-net:
+    driver: bridge
